@@ -1,2 +1,1 @@
-# sample-android
-Sample Android application for spiking different requirements
+Sample Android application to illustrate the concepts of Android ORM libraries like DBFlow etc.
