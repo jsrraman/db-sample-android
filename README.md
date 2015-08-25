@@ -45,7 +45,7 @@ public class StudentDbMigration1 extends AlterTableMigration<Student> {
 }
 ```
 Note
- - In the migration annotation above, version should typically point to the subsequent version where the new schema change is being introduced. Here the current version before migration is 1 and after migration it will be 2, so version value should be 2. The version value in this annotation is always hardcoded also keep the naming convention as xxxMigrationN, where 'N' indicates it is the migration script for moving from v1 to v2. 
+ - In the migration annotation above, version should typically point to the subsequent version where the new schema change is being introduced. Here the current version before migration is 1 and after migration it will be 2, so version value should be 2. The version value in this annotation is always hardcoded to a specific version. Also keep the naming convention as xxxMigrationN, where 'N' indicates this is the migration script for moving from v1 to v2. 
 
 Similarly we need to have separate migration classes for subsequent table alterations. Please refer StudentDbMigration2 class
 
