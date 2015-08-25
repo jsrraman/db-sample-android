@@ -4,6 +4,7 @@ import com.noveogroup.android.log.Log;
 import com.raizlabs.android.dbflow.annotation.Migration;
 import com.raizlabs.android.dbflow.config.FlowManager;
 import com.raizlabs.android.dbflow.sql.builder.Condition;
+import com.raizlabs.android.dbflow.sql.migration.AlterTableMigration;
 import com.raizlabs.android.dbflow.sql.migration.UpdateTableMigration;
 import com.rajaraman.db_sample.db.model.Student;
 import com.rajaraman.db_sample.db.model.Student$Table;
@@ -11,7 +12,7 @@ import com.rajaraman.db_sample.utils.AppConstants;
 
 // Migration from version 2 to 3
 @Migration(version = 3, databaseName = AppConstants.STUDENTS_DB_NAME)
-public class StudentDbMigration2 extends UpdateTableMigration<Student> {
+public class StudentDbMigration2 extends AlterTableMigration<Student> {
 
     // You need to have
     public StudentDbMigration2() {
@@ -21,10 +22,10 @@ public class StudentDbMigration2 extends UpdateTableMigration<Student> {
     @Override
     public void onPreMigrate() {
         super.onPreMigrate();
-        Log.d("Database version->", FlowManager.getDatabase(AppConstants.STUDENTS_DB_NAME).
-                getDatabaseVersion());
+        Log.d("Database version->" + String.valueOf(FlowManager.getDatabase(AppConstants.STUDENTS_DB_NAME).
+                getDatabaseVersion()));
 
-//        updateStudentTable();
+        addColumn(String.class, Student$Table.FULLNAME);
     }
 
 //    private void updateStudentTable() {

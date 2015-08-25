@@ -10,6 +10,7 @@ import com.rajaraman.db_sample.utils.AppConstants;
 
 // Use this migration for altering the existing table (only add column is allowed)
 // https://www.sqlite.org/omitted.html
+// Here version should point to the latest version the app is migrating to
 // Migration from version 1 to 2
 @Migration(version = 2, databaseName = AppConstants.STUDENTS_DB_NAME)
 public class StudentDbMigration1 extends AlterTableMigration<Student> {
@@ -21,8 +22,8 @@ public class StudentDbMigration1 extends AlterTableMigration<Student> {
     @Override
     public void onPreMigrate() {
         super.onPreMigrate();
-        Log.d("Database version->", FlowManager.getDatabase(AppConstants.STUDENTS_DB_NAME).
-                getDatabaseVersion());
+        Log.d("Database version->" + String.valueOf(FlowManager.getDatabase(AppConstants.STUDENTS_DB_NAME).
+                getDatabaseVersion()));
 
         addColumn(String.class, Student$Table.NICKNAME);
     }

@@ -37,7 +37,7 @@ public class Student extends BaseModel {
     @Column
     public String nickName;
 
-//    // Added in VERSION = 3
-//    @Column
-//    public String fullName;
+    // Added in VERSION = 3
+    @Column
+    public String fullName;
 }

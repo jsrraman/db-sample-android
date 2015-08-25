@@ -35,8 +35,8 @@ public class StudentDbManager {
             student.age = 19;
             student.name = "Name" + i;
             student.cgpa = 10.00;
-//            student.nickName = "NickName" + i;
-//            student.fullName = "FullName" + i;
+            student.nickName = "NickName" + i;
+            student.fullName = "FullName" + i;
 
             student.async().save();
 
